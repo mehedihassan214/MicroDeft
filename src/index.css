@@ -1,0 +1,138 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html,
+  body {
+    @apply overflow-x-hidden;
+  }
+}
+/* Base container styling */
+.home-container {
+  background-color: #f9fafb;
+  padding: 20px;
+}
+
+.container {
+  width: 100%;
+  max-width: 1200px; 
+  margin: 0 auto;
+  padding: 20px;
+}
+
+/* Grid layout for courses */
+.course-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr)); 
+  gap: 20px;
+}
+
+/* Card styling */
+.course-card {
+  border: 1px solid #e5e7eb;
+  border-radius: 0.375rem;
+  overflow: hidden;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+/* Image container with relative positioning */
+.image-container {
+  position: relative;
+}
+
+.course-image {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+}
+
+/* Status badge inside image container */
+.status-badge {
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+  padding: 0.5rem 1rem;
+  border-radius: 9999px;
+  font-size: 0.875rem;
+  color: white;
+}
+
+.status-badge.passed {
+  background-color: #38a169; 
+}
+
+.status-badge.failed {
+  background-color: #e53e3e; 
+}
+
+/* Course details styling */
+.course-details {
+  padding: 1rem;
+}
+
+.course-title {
+  font-size: 1.25rem;
+  font-weight: 600;
+  margin-bottom: 0.5rem;
+}
+
+.course-description {
+  color: #6b7280;
+  font-size: 0.875rem;
+  margin-bottom: 1rem;
+}
+
+.details-button {
+  background-color: #3b82f6;
+  color: white;
+  padding: 0.75rem 1.5rem;
+  border-radius: 9999px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.details-button:hover {
+  background-color: #2563eb;
+}
+
+/* Error text */
+.error-text {
+  color: #e53e3e;
+  font-size: 1rem;
+  text-align: center;
+  margin-top: 20px;
+}
+
+/* Responsive Styling */
+@media (max-width: 1200px) {
+  .course-grid {
+    grid-template-columns: repeat(4, 1fr); /* 4 columns for larger tablets */
+  }
+}
+
+@media (max-width: 992px) {
+  .course-grid {
+    grid-template-columns: repeat(3, 1fr); /* 3 columns for medium-sized devices */
+  }
+}
+
+@media (max-width: 768px) {
+  .course-grid {
+    grid-template-columns: repeat(2, 1fr); /* 2 columns for smaller tablets */
+  }
+}
+
+@media (max-width: 480px) {
+  .course-grid {
+    grid-template-columns: 1fr; /* 1 column for mobile devices */
+  }
+
+  .course-image {
+    height: 150px; /* Adjust image height for smaller devices */
+  }
+
+  .details-button {
+    width: 100%; /* Full-width button on mobile */
+  }
+}
