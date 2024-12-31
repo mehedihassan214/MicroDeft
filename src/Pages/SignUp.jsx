@@ -38,27 +38,27 @@ const SignUp = () => {
         let isValid = true;
 
         if (!signupData.email) {
-            setSignupDataErr((oldError) => ({ ...oldError, email: "email dau nai" }));
+            setSignupDataErr((oldError) => ({ ...oldError, email: "Email is required" }));
             isValid = false;
         } else if (
             !/^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|.(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/.test(
                 signupData.email
             )
         ) {
-            setSignupDataErr((oldError) => ({ ...oldError, email: "email deya thik hoi nai" }));
+            setSignupDataErr((oldError) => ({ ...oldError, email: "Invalid email address" }));
             isValid = false;
         }
 
         if (!signupData.name) {
-            setSignupDataErr((oldError) => ({ ...oldError, name: "name dau nai" }));
+            setSignupDataErr((oldError) => ({ ...oldError, name: "Name is required" }));
             isValid = false;
         }
 
         if (!signupData.password) {
-            setSignupDataErr((oldError) => ({ ...oldError, password: "password dau nai" }));
+            setSignupDataErr((oldError) => ({ ...oldError, password: "Password is required" }));
             isValid = false;
         } else if (!/[!@#$%^&*()_+{}\[\]:;<>,.?~\\/-]/.test(signupData.password)) {
-            setSignupDataErr((oldError) => ({ ...oldError, password: "password sokto dau nai" }));
+            setSignupDataErr((oldError) => ({ ...oldError, password: "Password must be stronger" }));
             isValid = false;
         }
 

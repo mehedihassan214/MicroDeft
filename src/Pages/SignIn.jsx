@@ -48,12 +48,12 @@ const SignIn = () => {
 
   const handleSubmit = async () => {
     if (!signInData.email) {
-      setSignInDataErr((oldError) => ({ ...oldError, email: "email dau nai" }));
+      setSignInDataErr((oldError) => ({ ...oldError, email: "Email is required" }));
     }
     if (!signInData.password) {
       setSignInDataErr((oldError) => ({
         ...oldError,
-        password: "password dau nai",
+        password: "Password is required",
       }));
     }
     if (signInData.email && signInData.password) {
@@ -80,7 +80,7 @@ const SignIn = () => {
           navigate("/");
         }, 2000);
       } catch (error) {
-        toast.error('Login failed. Try again.', {
+        toast.error("Login failed. Try again.", {
           position: "top-right",
           autoClose: 5000,
           hideProgressBar: false,
@@ -140,7 +140,7 @@ const SignIn = () => {
               </p>
 
               <div className="text-center">
-                <Flex className="items-center justify-center ">
+                <Flex className="items-center justify-center">
                   {loading ? (
                     <ThreeDots
                       visible={true}
@@ -152,7 +152,7 @@ const SignIn = () => {
                     />
                   ) : (
                     <button
-                      className="bg-[#5F35F5] text-[#fff]  items-center mt-[40px] font-[600] text-[20px] font-[nunito] w-[368px] px-[50px] py-[20px] rounded-[86.003px]"
+                      className="bg-[#5F35F5] text-[#fff] items-center mt-[40px] font-[600] text-[20px] font-[nunito] w-[368px] px-[50px] py-[20px] rounded-[86.003px]"
                       onClick={handleSubmit}
                     >
                       Login to Continue
@@ -161,7 +161,7 @@ const SignIn = () => {
                 </Flex>
                 <Link to={"/SignUp"}>
                   <p className="text-[#03014C] font-[400] text-[13px] font-[open] mt-[25px]">
-                    Don’t have an account ?{" "}
+                    Don’t have an account?{" "}
                     <span className="text-[#EA6C00] font-[700] text-[13px] font-[open] cursor-pointer">
                       Sign Up
                     </span>
